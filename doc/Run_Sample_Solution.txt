@@ -1,0 +1,24 @@
+Run the Sample Solution
+It’s time to run the project with the sample solution. Enable the GPU, GO TO DESKTOP, and follow these steps for a successful run:
+
+Update/upgrade the system
+apt-get update -y
+apt-get upgrade -y```
+2. Install all the packages dependencies
+```sh
+cd /home/workspace/catkin_ws/
+rosdep install --from-paths src --ignore-src -r -y
+Build and source your catkin_ws
+cd /home/workspace/catkin_ws/
+catkin_make
+source devel/setup.bash
+Launch all the project nodes
+# We’ve combined all the launch files in a `start_project.sh` script. 
+# Note: This script will only run if you are in the visual desktop, don't try to run it inside the workspace terminal!
+cd /home/workspace/catkin_ws/src/rll_planning_project/scripts/
+./start_project.sh
+You'll need to repeat these steps after each reboot!
+
+Stopping a Run
+Hit Enter key in the main terminal to instantly kill the project execution and all the ROS nodes. You need to wait at least 30 seconds before starting a new run because the nodes will take some time to fully terminate. If you encountered an error, don't worry about it - just relaunch the nodes either manually or with the shell script file provided.
+

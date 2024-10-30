@@ -1,0 +1,24 @@
+Earlier, you launched the sample solution which executed a path from start to goal. Now, let’s make this problem more challenging by changing the start and end pose values of the object.
+
+Navigate to the /home/workspace/catkin_ws/src/rll_planning_project/launch directory, open the planning_iface.launch file, and change the start and 2D pose of the object. Try your code for different configurations of start and goal poses.
+
+The Contest Maze is over and now we are back to the Practice Phase Maze 1.
+
+Practice Phase Maze 1 Start/Goal configuration:
+
+ <!-- Start 2D pose  -->
+ <arg name="start_pos_x" default="0.38" />
+ <arg name="start_pos_y" default="0.0" />
+ <arg name="start_pos_theta" default="0.0" />
+ <!-- Goal 2D pose  -->
+ <arg name="goal_pos_x" default="-0.37" />
+ <arg name="goal_pos_y" default="0.5" />
+ <arg name="goal_pos_theta" default="0.0" />
+Now, code a path planning algorithm to search for a path and move the object from its new start pose to its new goal pose. At each launch, note your score down and try to improve your planner to be as fast as possible.
+
+Pre-Submitting
+Once you finish coding the path planning algorithm and succesfully testing it in simulation, you'll want to jump in and submit your code to the hardware. Before you do that, you need to test your code more than once! Actually, three times since your code will run three times on the hardware, with the median time selected as your reported time. To test your code three times in simulation, change the run_three_times argument value in the planning_iface.launch file to true:
+
+<!-- call the path planner three times and take the median as duration -->
+<arg name="run_three_times" default="true"/>
+Then, run your code and check if your able to succesfully move the object from start to goal three times continuously. The reason why we're asking you to do that is to make sure that you accounted for multiple runs by resetting your global variables. After that, feel free to move on and submit your code.

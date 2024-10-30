@@ -1,0 +1,67 @@
+Submission Instructions
+Lesson
+
+Downloads
+Submitting your project during the PRACTICE PHASE
+Once you’ve gotten your project working in the simulator, you can submit it to run on the real KUKA arm! Once submitted, your “job” will be put in a queue at the KIT Robotics Learning Lab (RLL). Your job will first be run in a simulator, to make sure it can run successfully on the hardware.
+
+There are only a few steps for your submission:
+
+Manually fetch your user code and install it in your workspace
+Enter submit on the command line in a terminal window
+To check on your jobs, enter check_jobs on the command line in a terminal window.
+Install your user code - the jwt file
+The jwt file is your user code and must be available at /home/workspace/JWT/jwt in order to submit a project. You can download your user code by clicking here(opens in a new tab).
+You may need to navigate to the link a second time after logging in for the file to automatically download. Once you've downloaded your jwt, copy the contents into: /home/workspace/JWT/jwt.
+
+Submit your job
+Your python script must reside at /home/workspace/catkin_ws/rll_planning_project/scripts/path_planner.py. This is the only file that will be uploaded. If the submission succeeded, you’ll see the “Submission Complete” feedback. Note that this does not indicate any status of the code itself, only that the job was successfully submitted to the queue. You may only have one job at a time in the queue.
+
+During the submission process, you must positively “opt in” if you wish to see your time and rank on the leaderboard.
+
+Note: In case the submission process fails, refresh the workspace and try again.
+
+Check on your job(s)
+Once your job is submitted, it will be given a job number and placed in a queue at the KIT RLL. To check on your job, enter check_jobs on the command line. You’ll receive a status update on all the jobs you’ve entered. Here is an example of two failed jobs and another sitting in the queue partially done:
+
+{
+    "5b61d7d3f7971f68ce977d43": {
+        "job_data": null,
+        "job_result": "sim failure",
+        "job_status": "finished",
+        "position": -1
+    },
+    "5b631f18f7971f14d02942c6": {
+        "job_data": null,
+        "job_result": "sim failure",
+        "job_status": "finished",
+        "position": -1
+    },
+    "5b634ca8f7971f14d02942c7": {
+        "job_data": {
+            "duration": 144.0544441403444594
+        },
+        "job_result": "sim success",
+        "job_status": "waiting for real",
+        "position": 2
+    }
+}
+Note that the last job has a “duration” time associated with it. However, the job has not run on the “real” yet, so this is just the simulation run time. If the job runs successfully on the “real” arm, you should see an entry something like this:
+
+ {   "5b634ca8f7971f14d0222222": {
+        "job_data": {
+            "duration": 99.123451234
+        },
+        "job_result": "real success",
+        "job_status": "finished",
+        "position": -1
+    }
+}
+At this point, the score (time) will be entered in the leaderboard database. If you have opted in, your time and rank will be visible on the leaderboard under whatever name you’ve chosen to post with.
+
+Submitting your project during the CONTEST PHASE
+The same command, submit, should be used to submit your project. The submission system will operate a little differently during this phase:
+
+During submission, you will be presented with the Terms and Conditions for the contest and must positively agree to them to enter the contest.
+You will not receive any log links or video feedback until the contest is over, though you will receive job status with the check_jobs command.
+All jobs that pass the simulator will be added to a queue to run on the real KUKA arm. The real runs for each entry will only take place after the contest closes.

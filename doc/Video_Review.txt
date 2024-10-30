@@ -1,0 +1,18 @@
+Video Review
+
+Video url: https://youtu.be/ZEW-gsCAWRs
+
+Look closely at the video and try to identify the 4 cycles mentioned earlier:
+
+First, the KUKA gripper will move to the object start position, orient itself with respect to the object, grab the object, and lift it up.
+At this stage, your path planning code will be executed. Your code will search for a path and navigate the robot through the maze by commanding 2D positions, and an orientation angle, in order to get around corners in the maze
+You will have a total time of 8 minutes to search for a path and move toward the goal pose. Once reached, your cuboid object will be placed in the goal pose.
+Finally, the robot will lift the object from the goal pose, return it back to the start pose, drop it, and get ready for another run.
+
+# Gazebo and Rviz
+
+Gazebo: Visual maze(red color) which is a replica of the real maze located at the KIT Lab in Germany.
+
+Rviz: Collision maze(yellow color) which is the same as the visual maze but with thicker walls and some extra ones. Inside the collision maze, you can still see the visual maze that has thinner walls. The red block indicates the goal pose of the object.
+
+As a safety measure, we added a tolerance value to the visual maze to prevent any collision between the object or robot and the maze walls in the real world.
