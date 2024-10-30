@@ -1,0 +1,11 @@
+KUKA: https://youtu.be/MThf6RUd3Gw
+
+In this project, you’ll implement a path planning algorithm by navigating a maze. In general, path planning problems through mazes are reduced to two dimensions: the x and y position of the object. However, this project will extend the search space by a third dimension, the orientation of the gripper around the vertical z-axis.
+
+Execution Cycle
+At each run, the robot will follow this cycle:
+
+First, the KUKA gripper will move to the object start position, orient itself with respect to the object, grab the object, and lift it up.
+At this stage, your path planning code will be executed. Your code will search for a path and navigate the robot through the maze by commanding 2D positions, and an orientation angle, in order to get around corners in the maze
+You will have a total time of 8 minutes to search for a path and move toward the goal pose. Once reached, your cuboid object will be placed in the goal pose.
+Finally, the robot will lift the object from the goal pose, return it back to the start pose, drop it, and get ready for another run.
